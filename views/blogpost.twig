@@ -1,0 +1,9 @@
+{% extends "pages/default.twig" %}
+{% block content %}
+    <h2>{{ blogPost.title }}</h2>
+    <img class="img-fluid" src="{{ blogPost.img_url }}" alt="Image Blog">
+    <p class="lead mt-3">
+        {{ blogPost.content }}
+    </p>
+    <p>Written by <a href="{{ ('user/'~user.id) | url }}">{{ user.username }}</a></p>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "pages/default.twig" %}
+{% block content %}
+    <h2>{{ user.name }}</h2>
+    <img src="{{ user.img_url }}" class="img-fluid user-photo" alt="Image Blog">
+    <h4>USERNAME</h4>
+    <p>{{ user.username }}</p>
+    <h4>EMAIL</h4>
+    <p>{{ user.email }}</p>
+{% endblock %}

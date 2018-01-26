@@ -1,0 +1,28 @@
+{% extends "pages/default.twig" %}
+{% block content %}
+    <h2>Posts</h2>
+    <a class="btn btn-primary" href="{{ 'admin/posts/create' | url }}">New Post</a>
+    <table class="table">
+        <tr>
+            <th>Title</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        {% for blogPost in blogPosts %}
+            <tr>
+                <td>{{ blogPost.title }}</td>
+                <td>
+                    <a href="{{ ('admin/posts/edit/'~blogPost.id) | url }}">
+                        <button type="button" class="btn btn-dark">EDIT</button>
+                    </a>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger" data-toggle="modal" data-id="{{ blogPost.id }}" data-target="#deleteBlogModal">
+                        DELETE
+                    </button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% include("partials/modal-delete.twig") %}
+{% endblock %}

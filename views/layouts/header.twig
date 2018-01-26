@@ -1,0 +1,11 @@
+<nav class="navbar navbar-expand-lg text-light mb-5 {% if logged %} logged {% endif %}">
+    <a class="navbar-brand ml-0 ml-lg-4" href="{{ '' | url  }}">Clock</a>
+    <button class="navbar-toggler bg-light{% if logged %} d-none {% endif %}" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </button>
+    {% if logged %}
+        {% include 'layouts/headerProfile.twig' %}
+    {% else %}
+        {% include 'layouts/headerMenu.twig' %}
+    {% endif %}
+</nav>

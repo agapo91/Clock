@@ -1,0 +1,6 @@
+<div class="d-flex ml-auto justify-content-end align-items-center" id="navbarSupportedContent">
+    <a href="{{ ('user/'~currentUser.id) | url }}">
+        <span class="text-primary">{{ currentUser.username }}</span>
+    </a>
+    <img src="{{ currentUser.img_url }}" class="img-Profile mx-4">
+</div>

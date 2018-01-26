@@ -1,0 +1,27 @@
+{% extends "pages/default.twig" %}
+{% block content %}
+    <h2>New User</h2>
+    <a class="btn btn-secondary" href="{{ 'admin/users' | url }}">Back</a>
+    <form method="post">
+        <div class="form-group">
+            <label for="inputName">Name</label>
+            <input class="form-control" type="text" name="name" id="inputName" required>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input class="form-control" type="email" name="email" id="inputEmail" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input class="form-control" type="password" name="password" id="inputPassword" required>
+        </div>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Save">
+    </form>
+    {% if errors %}
+        {% include("partials/errors.twig") %}
+    {% endif %}
+    {% if (result is defined) and result %}
+        <div class="alert alert-success">User Saved!!</div>
+    {% endif %}
+{% endblock %}

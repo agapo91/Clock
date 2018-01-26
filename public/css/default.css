@@ -1,0 +1,54 @@
+body {
+    font-family: 'Gloria Hallelujah', cursive;
+}
+nav.navbar {
+    background-color: white;
+    border-bottom: .1rem solid rgba(0, 0, 0, .4);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    transition: all .3s;
+}
+nav.navbar.logged {
+    height: 8vh;
+}
+nav.navbar.logged.scrolled {
+    height: 11vh;
+}
+.navbar-brand {
+    font-size: 2.2rem;
+}
+.nav-item .nav-link {
+    font-size: 1.3rem;
+}
+.nav-link,
+span.nav-link {
+    color: #007bff;
+}
+.navbar-collapse .nav-link {
+    text-align: center;
+}
+.container {
+    margin-top: 14vh;
+    max-width: 95%;
+    min-height: 85vh;
+}
+
+.img-Profile {
+    height: 70%;
+    width: auto;
+    border-radius: 50%;
+    display: block;
+    margin: auto 0;
+}
+.user-photo {
+    height: 30%;
+    width: auto;
+    border-radius: 50%;
+}
+.list-group-item.list-group-item-action {
+    display: flex;
+    justify-content: flex-end;
+}

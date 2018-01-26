@@ -1,0 +1,12 @@
+{% extends 'pages/cover.twig' %}
+{% block contenido %}
+    {% include 'layouts/header.twig' %}
+    <main role="main" class="cover my-auto">
+        <p class="lead">Unexplained photos, unsolved cases, missing persons...</p>
+        <h2 class="cover-heading">Time Travels</h2>
+        <p class="lead">
+            <a href="{{ '?page=1' | url }}" class="btn btn-lg btn-secondary">Start Reading</a>
+        </p>
+    </main>
+    {% include 'layouts/footer.twig' %}
+{% endblock %}

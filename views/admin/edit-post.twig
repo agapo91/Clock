@@ -1,0 +1,25 @@
+{% extends "pages/default.twig" %}
+{% block content %}
+    <h2>Edit Post</h2>
+    <a class="btn btn-secondary" href="{{ 'admin/posts' | url }}">Back</a>
+    <form method="post">
+        <div class="form-group">
+            <label for="inputTitle">Title</label>
+            <input class="form-control" type="text" name="title" id="inputTitle" value="{{ blogPost.title }}" required>
+        </div>
+        <div class="form-group">
+            <label for="inputImg">Image</label>
+            <input class="form-control" type="text" name="img" id="inputImg" value="{{ blogPost.img_url }}">
+        </div>
+        <label for="inputContent">Content</label>
+        <textarea class="form-control" name="content" id="inputContent" rows="5" required>{{ blogPost.content }}</textarea>
+        <br>
+        <input class="btn btn-primary" type="submit" value="Save">
+    </form>
+    {% if errors %}
+       {% include('partials/errors.twig') %}
+    {% endif %}
+    {% if (result is defined) and result %}
+        <div class="alert alert-success">Post Updated!!</div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="row justify-content-center my-4">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item{% if page==1 %} disabled {% endif %}"><a class="page-link" href="{{ ('?page='~(page-1)) | url }}">Previous</a></li>
+            {% for p in 1..totalPages %}
+                <li class="page-item{% if page==p %} active {% endif %}"><a class="page-link" href="{{ ('?page='~p) | url}}">{{ p }}</a></li>
+            {% endfor %}
+            <li class="page-item{% if page==totalPages %} disabled {% endif %}"><a class="page-link" href="{{ ('?page='~(page+1)) | url }}">Next</a></li>
+        </ul>
+    </nav>
+</div>
